@@ -1,0 +1,8 @@
+services:
+  camella:
+    build: .
+    image: camella-projects:latest
+    container_name: camella-projects
+    restart: unless-stopped
+    ports:
+      - "8080:80"
