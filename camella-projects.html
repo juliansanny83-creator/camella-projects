@@ -546,6 +546,40 @@ img{max-width:100%}
   .form-actions .btn{width:100%}
   .form-success .btn{width:100%;justify-content:center}
   .hero-cta .btn{flex:1 1 auto}
+  /* Mobile hero order: the "Camella in Bulacan" text pane (heading,
+     description, and the synced slide text) comes FIRST, directly above
+     the hero image band, instead of the image coming first. Purely a
+     visual reorder via flex order — the DOM and the slideshow script are
+     untouched, and wider screens keep the original image-first layout. */
+  .hero .syncshow{display:flex;flex-direction:column}
+  .hero .syncshow>.wrap{order:-1}
+  .hero .syncshow>.hero-band{order:0}
+  /* With the pane now on top, tighten its mobile spacing so the slideshow
+     nav row (prev / dots / next) ends above the fixed sticky bar instead
+     of sliding underneath it on the first phone screen. */
+  .hero .ss-pane{margin:10px 0 18px;padding:18px 18px 16px}
+  .hero-copy p.lede{margin:8px 0 14px}
+  .hero .ss-sync{padding-top:14px;margin-top:0}
+  .hero .ss-type{margin-bottom:10px}
+  .hero .ss-desc{margin-top:8px}
+  .hero .ss-meta{margin-top:10px}
+  .hero .ss-sync .ss-nav{margin-top:12px}
+  /* Keep the hero nav's right-hand controls clear of the fixed presenter
+     button in the bottom-right corner: the nav keeps a right channel open
+     (same trick as .hero-cta), its dots get a slightly smaller hit area so
+     prev + dots fit one row, and the pane tightens a little more so the
+     wrapped second row (count + next) also ends above the sticky bar. */
+  .hero .ss-sync .ss-nav{margin-top:8px;padding-right:64px;row-gap:6px}
+  .hero .ss-dot{width:36px;height:36px}
+  .hero .ss-pane{margin-top:6px;padding:14px 18px 10px}
+  .hero .kicker{margin-bottom:6px}
+  .hero-copy h1{font-size:1.78rem;line-height:1.12}
+  .hero-copy p.lede{margin:6px 0 12px;line-height:1.55}
+  .hero .ss-sync{padding-top:10px}
+  .hero .ss-type{margin-bottom:8px;padding:7px 16px}
+  .hero .ss-title{font-size:1.35rem}
+  .hero .ss-desc{margin-top:6px;line-height:1.6}
+  .hero .ss-meta{margin-top:8px;padding:6px 12px}
 }
 @media (max-width:480px){
   .sticky-bar{padding-left:10px;padding-right:10px;gap:8px}
